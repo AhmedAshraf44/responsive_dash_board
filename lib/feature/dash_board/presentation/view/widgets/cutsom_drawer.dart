@@ -16,7 +16,7 @@ class CustomDrawer extends StatelessWidget {
             image: Assets.imagesAvatar3,
             title: 'Lekan Okeowo',
             subtitle: 'demo@gmail.com',
-          )
+          ),
         ],
       ),
     );
