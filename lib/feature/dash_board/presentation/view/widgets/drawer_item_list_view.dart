@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/feature/dash_board/presentation/models_view/drawer_item_model.dart';
+import 'package:responsive_dash_board/feature/dash_board/data/models/drawer_item_model.dart';
 import 'package:responsive_dash_board/feature/dash_board/presentation/view/widgets/drawer_item.dart';
 
 import '../../../../../core/utils/app_images.dart';
@@ -31,9 +31,9 @@ class _DrawerItemListViewState extends State<DrawerItemListView> {
           child: GestureDetector(
             onTap: () {
               if (activeIndex != index) {
-                 setState(() {
-                activeIndex = index;
-              });
+                setState(() {
+                  activeIndex = index;
+                });
               }
             },
             child: DrawerItem(

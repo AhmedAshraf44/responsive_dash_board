@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:responsive_dash_board/constants.dart';
 import 'package:responsive_dash_board/core/utils/app_images.dart';
-import 'package:responsive_dash_board/feature/dash_board/presentation/models_view/drawer_item_model.dart';
+import 'package:responsive_dash_board/feature/dash_board/data/models/drawer_item_model.dart';
 import 'package:responsive_dash_board/feature/dash_board/presentation/view/widgets/drawer_item.dart';
 import 'package:responsive_dash_board/feature/dash_board/presentation/view/widgets/drawer_item_list_view.dart';
 import 'package:responsive_dash_board/feature/dash_board/presentation/view/widgets/user_info_list_tittle.dart';
@@ -30,12 +30,14 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           DrawerItemListView(),
-         
           SliverFillRemaining(
             hasScrollBody: false,
             child: Column(
               children: [
-                 Expanded(child: SizedBox()),
+                Expanded(
+                    child: SizedBox(
+                  height: 20,
+                )),
                 InActiveListTitle(
                   item: DrawerItemModel(
                     image: Assets.imagesSettings,
