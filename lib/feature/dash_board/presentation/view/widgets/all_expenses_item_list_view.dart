@@ -4,14 +4,15 @@ import 'package:responsive_dash_board/feature/dash_board/presentation/view/widge
 import '../../../../../core/utils/app_images.dart';
 import '../../../data/models/all_expenses_item_model.dart';
 
-class AllExpensesItemList extends StatefulWidget {
-  const AllExpensesItemList({super.key});
+class AllExpensesItemListView extends StatefulWidget {
+  const AllExpensesItemListView({super.key});
 
   @override
-  State<AllExpensesItemList> createState() => _AllExpensesItemListState();
+  State<AllExpensesItemListView> createState() =>
+      _AllExpensesItemListViewState();
 }
 
-class _AllExpensesItemListState extends State<AllExpensesItemList> {
+class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
   List<AllExpensesItemModel> item = const [
     AllExpensesItemModel(
         image: Assets.imagesBalance,
