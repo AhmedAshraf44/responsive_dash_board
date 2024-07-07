@@ -34,30 +34,65 @@ class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: item.asMap().entries.map((e) {
-        int index = e.key;
-        var value = e.value;
-        return Expanded(
+      children: [
+        Expanded(
           child: GestureDetector(
-            onTap: () {
-              updateIndex(index);
-            },
-            child: index == 1
-                ? Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: AllExpensesItem(
-                      isSelect: isSelectIndex == index,
-                      item: value,
-                    ),
-                  )
-                : AllExpensesItem(
-                    isSelect: isSelectIndex == index,
-                    item: value,
-                  ),
-          ),
-        );
-      }).toList(),
+              onTap: () {
+                updateIndex(0);
+              },
+              child: AllExpensesItem(
+                isSelect: isSelectIndex == 0,
+                item: item[0],
+              )),
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: GestureDetector(
+              onTap: () {
+                updateIndex(1);
+              },
+              child: AllExpensesItem(
+                isSelect: isSelectIndex == 1,
+                item: item[1],
+              )),
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: GestureDetector(
+              onTap: () {
+                updateIndex(2);
+              },
+              child: AllExpensesItem(
+                isSelect: isSelectIndex == 2,
+                item: item[2],
+              )),
+        ),
+      ],
     );
+//solve responsive
+    // Row(
+    //   children: item.asMap().entries.map((e) {
+    //     int index = e.key;
+    //     var value = e.value;
+    //     return Expanded(
+    //       child: GestureDetector(
+    //           onTap: () {
+    //             updateIndex(index);
+    //           },
+    //           child: Padding(
+    //             padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
+    //             child: AllExpensesItem(
+    //               isSelect: isSelectIndex == index,
+    //               item: value,
+    //             ),
+    //           )),
+    //     );
+    //   }).toList(),
+    // );
     //2- slove
     // Row(
     //   children: item

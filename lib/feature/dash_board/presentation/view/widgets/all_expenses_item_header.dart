@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -17,19 +18,25 @@ class AllExpensesItemHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          width: 60,
-          height: 60,
-          decoration: ShapeDecoration(
-            shape: const OvalBorder(),
-            color: background ?? kBackgroundListTitleColor,
+        Flexible(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 60),
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                decoration: ShapeDecoration(
+                  shape: const OvalBorder(),
+                  color: background ?? kBackgroundListTitleColor,
+                ),
+                child: Center(
+                    child: SvgPicture.asset(
+                  image,
+                  colorFilter:
+                      ColorFilter.mode(color ?? kSecondColor, BlendMode.srcIn),
+                )),
+              ),
+            ),
           ),
-          child: Center(
-              child: SvgPicture.asset(
-            image,
-            colorFilter:
-                ColorFilter.mode(color ?? kSecondColor, BlendMode.srcIn),
-          )),
         ),
         const Spacer(),
         Transform.rotate(

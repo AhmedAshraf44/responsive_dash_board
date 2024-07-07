@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../constants.dart';
@@ -11,6 +10,7 @@ class MyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //  double paddingTop = MediaQuery.sizeOf(context).width;
     return AspectRatio(
       aspectRatio: 420 / 215,
       child: Container(
@@ -27,7 +27,7 @@ class MyCard extends StatelessWidget {
           children: [
             ListTile(
               contentPadding:
-                  const EdgeInsets.only(left: 31, right: 42, top: 12),
+                  const EdgeInsets.only(left: 31, right: 42, top: 10),
               title: Text(
                 'Name card',
                 style: AppStyle.styleRegular16(context)
