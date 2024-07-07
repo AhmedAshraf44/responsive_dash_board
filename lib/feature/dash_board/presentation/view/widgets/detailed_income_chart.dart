@@ -6,7 +6,6 @@ import '../../../../../constants.dart';
 
 class DetailedIncomeChart extends StatefulWidget {
   const DetailedIncomeChart({super.key});
-
   @override
   State<DetailedIncomeChart> createState() => _DetailedIncomeChartState();
 }
@@ -15,7 +14,10 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
   int activeIndex = -1;
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(aspectRatio: 1, child: PieChart(gatPieChartData));
+    double width = MediaQuery.sizeOf(context).width;
+    return AspectRatio(
+        aspectRatio: width >= 1373 ? 1 / 1 : 3 / 1.41,
+        child: PieChart(gatPieChartData));
   }
 
   PieChartData get gatPieChartData {
@@ -34,7 +36,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
           PieChartSectionData(
             titlePositionPercentageOffset: activeIndex == 0 ? 1.6 : null,
             title: activeIndex == 0 ? 'Design service' : null,
-            titleStyle: AppStyle.styleMedium16.copyWith(
+            titleStyle: AppStyle.styleMedium16(context).copyWith(
                 color: activeIndex == 0 ? kPrimaryColor : kWhiteColor),
             radius: activeIndex == 0 ? 45 : 40,
             value: 40,
@@ -43,7 +45,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
           PieChartSectionData(
             titlePositionPercentageOffset: activeIndex == 1 ? 2.5 : null,
             title: activeIndex == 1 ? 'Design product' : null,
-            titleStyle: AppStyle.styleMedium16.copyWith(
+            titleStyle: AppStyle.styleMedium16(context).copyWith(
                 color: activeIndex == 1 ? kPrimaryColor : kWhiteColor),
             radius: activeIndex == 1 ? 45 : 40,
             value: 25,
@@ -52,7 +54,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
           PieChartSectionData(
             titlePositionPercentageOffset: activeIndex == 2 ? 1.5 : null,
             title: activeIndex == 2 ? 'Product royalti' : null,
-            titleStyle: AppStyle.styleMedium16.copyWith(
+            titleStyle: AppStyle.styleMedium16(context).copyWith(
                 color: activeIndex == 2 ? kPrimaryColor : kWhiteColor),
             radius: activeIndex == 2 ? 45 : 40,
             value: 20,
@@ -61,7 +63,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
           PieChartSectionData(
             titlePositionPercentageOffset: activeIndex == 3 ? 1.7 : null,
             title: activeIndex == 3 ? 'Other' : null,
-            titleStyle: AppStyle.styleMedium16.copyWith(
+            titleStyle: AppStyle.styleMedium16(context).copyWith(
                 color: activeIndex == 3 ? kPrimaryColor : kWhiteColor),
             radius: activeIndex == 3 ? 45 : 40,
             value: 22,

@@ -41,7 +41,7 @@ class _CustomDropdownButtonState extends State<CustomDropdownButton> {
         ),
       ),
       child: DropdownButton(
-        style: AppStyle.styleMedium16,
+        style: AppStyle.styleMedium16(context),
         underline: const SizedBox(),
         items: items,
         value: dropdownValue,

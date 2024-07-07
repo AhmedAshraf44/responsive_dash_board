@@ -19,7 +19,8 @@ class TransactionHistory extends StatelessWidget {
         ),
         Text(
           '13 April 2022',
-          style: AppStyle.styleMedium16.copyWith(color: kItemsBackgroundColor),
+          style: AppStyle.styleMedium16(context)
+              .copyWith(color: kItemsBackgroundColor),
         ),
         const SizedBox(
           height: 16,

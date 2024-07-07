@@ -13,8 +13,8 @@ class CustomTextFeild extends StatelessWidget {
       decoration: InputDecoration(
           filled: true,
           fillColor: kBackgroundListTitleColor,
-          hintStyle:
-              AppStyle.styleRegular16.copyWith(color: kItemsBackgroundColor),
+          hintStyle: AppStyle.styleRegular16(context)
+              .copyWith(color: kItemsBackgroundColor),
           hintText: hint,
           border: buildBorder(),
           enabledBorder: buildBorder(),

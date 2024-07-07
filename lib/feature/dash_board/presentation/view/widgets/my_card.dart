@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../constants.dart';
@@ -26,15 +27,17 @@ class MyCard extends StatelessWidget {
           children: [
             ListTile(
               contentPadding:
-                  const EdgeInsets.only(left: 31, right: 42, top: 16),
+                  const EdgeInsets.only(left: 31, right: 42, top: 12),
               title: Text(
                 'Name card',
-                style: AppStyle.styleRegular16.copyWith(color: kWhiteColor),
+                style: AppStyle.styleRegular16(context)
+                    .copyWith(color: kWhiteColor),
               ),
-              subtitle: const Text('Syah Bandi', style: AppStyle.styleMedium20),
+              subtitle:
+                  Text('Syah Bandi', style: AppStyle.styleMedium20(context)),
               trailing: SvgPicture.asset(Assets.imagesGallery),
             ),
-            const Spacer(),
+            const Expanded(child: SizedBox()),
             Padding(
               padding: const EdgeInsets.only(right: 24),
               child: Column(
@@ -42,20 +45,23 @@ class MyCard extends StatelessWidget {
                 children: [
                   Text(
                     '0918 8124 0042 8129',
-                    style:
-                        AppStyle.styleSemiBold24.copyWith(color: kWhiteColor),
+                    style: AppStyle.styleSemiBold24(context)
+                        .copyWith(color: kWhiteColor),
                   ),
                   const SizedBox(
-                    height: 12,
+                    height: 10,
                   ),
                   Text(
                     '12/20 - 124',
-                    style: AppStyle.styleRegular16.copyWith(color: kWhiteColor),
-                  ),
-                  const SizedBox(
-                    height: 27,
+                    style: AppStyle.styleRegular16(context)
+                        .copyWith(color: kWhiteColor),
                   ),
                 ],
+              ),
+            ),
+            const Flexible(
+              child: SizedBox(
+                height: 27,
               ),
             ),
           ],

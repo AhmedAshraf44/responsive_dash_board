@@ -29,7 +29,10 @@ class InActiveListTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(item.image),
-      title: Text(item.title, style: AppStyle.styleRegular16),
+      title: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(item.title, style: AppStyle.styleRegular16(context))),
     );
   }
 }
@@ -46,7 +49,7 @@ class ActiveListTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(item.image),
-      title: Text(item.title, style: AppStyle.styleBold16),
+      title: Text(item.title, style: AppStyle.styleBold16(context)),
       trailing: Container(
         color: kSecondColor,
         width: 3.27,
